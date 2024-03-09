@@ -1,8 +1,16 @@
 header{
-	height: 7vh;
-	padding: 15px 0;
 	background: #222;
+	nav{
+		display: flex;
+		gap: 25px;
+		align-items: center;
+		height: 96px;
+		text-transform: uppercase;
+	}
 	a {
 		color: #fff;
+		font-size: 18px;
+		text-decoration: none;
+		padding: 6px 12px;
 	}
 }
