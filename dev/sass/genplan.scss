@@ -1,5 +1,7 @@
 .genplan{
-    height: calc(100vh - $header-height);
+    max-height: calc(100vh - $header-height);
+    overflow: hidden;
+    position: relative;
 }
 .build-path{
     fill: #27d52aad;
@@ -10,5 +12,28 @@
         stroke-opacity: 1;
         cursor: pointer;
         fill-opacity: 0.3;  
+    }
+}
+.information{
+    position: absolute;
+    bottom: 3vw;
+    right: 3vw;
+    border: 3px solid #fff;
+    padding: 28px;
+    border-radius: 12px;
+    background-color: #fff4;
+    backdrop-filter: blur(2px);
+    color: black;
+    &-list-item{
+        list-style: none;
+        margin-bottom: 12px;
+        font-size: 18px;
+        div{
+            display: flex;
+            justify-content: space-between;
+        }
+        strong{
+            font-weight: 600;
+        }
     }
 }

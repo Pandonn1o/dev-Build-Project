@@ -1,16 +1,41 @@
-header{
-	background: #222;
-	nav{
-		display: flex;
-		gap: 25px;
-		align-items: center;
-		height: $header-height;
-		text-transform: uppercase;
-	}
-	a {
-		color: #fff;
-		font-size: 18px;
-		text-decoration: none;
-		padding: 6px 12px;
-	}
+header {
+    background: #282525a2;
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        display: inline-block;
+        max-width: 46px;
+        width: 100%;
+        margin-right: 20px;
+
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
+.header-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    text-transform: uppercase;
+    transition: .5s;
+    a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 6px 12px;
+    }
+
+    &.show {
+        display: flex;
+    }
+}
+
+.burger-btn {
+    margin-left: auto;
 }

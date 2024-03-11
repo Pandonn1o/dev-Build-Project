@@ -1,3 +1,23 @@
 @media screen and (max-width: 767px) {
-    
+    .header-nav{
+        position: absolute;
+        top: 63px;
+        width: 100%;
+        flex-direction: column;
+        right: 0;
+        z-index: 1;
+        height: auto;
+        padding: 0;
+        backdrop-filter: blur(8px);
+        background-color: rgba(40, 37, 37, 0.6352941176);
+        transform: translate(0px, -360px);
+        &.show{
+            transform: translate(0px, 0px);
+            padding: 47px 20px;
+            height: calc(100wv - 63px);
+        }
+    }
+    header{
+        padding: 6px 0;
+    }
 }
