@@ -14,6 +14,15 @@
         fill-opacity: 0.3;  
     }
 }
+.booking{
+    path{
+    fill: red;
+    stroke: rgb(209 214 197);
+    fill-opacity: 0.3;
+    &:hover{
+        cursor: not-allowed;
+    }
+}}
 .information{
     position: absolute;
     bottom: 3vw;
