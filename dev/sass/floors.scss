@@ -1,4 +1,4 @@
-.floor-info{
+.floor-info {
     display: flex;
     background: #9d9dca;
     border-radius: 12px;
@@ -7,10 +7,69 @@
     border-radius: 9px;
     margin: 26px 0 36px;
 }
-.info-item{
+
+.info-item {
     width: 100%;
     background-color: white;
     padding: 12px;
     border-radius: 6px;
     text-align: center;
+}
+
+.floor-path {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    fill: #0085b7;
+    stroke: darkgreen;
+    transition: .4s;
+    stroke-width: 2px;
+
+    &:hover {
+        cursor: pointer;
+        fill-opacity: 0.3;
+        stroke-opacity: 0.6;
+    }
+}
+
+.booked {
+    .status-cell {
+
+        fill: #6B68FF;
+    }
+}
+
+.free {
+    .status-cell {
+
+        fill: #00DEFC;
+    }
+}
+
+.sold {
+    .status-cell {
+
+        fill: #D34E4E;
+    }
+}
+
+.burgain {
+    .status-cell {
+
+        fill: #80D34E;
+    }
+}
+
+.status-large-cell {
+    fill: white;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.status-cell {
+    stroke: black;
+    stroke-width: 2px;
+    &__number, &__text{
+        fill:  black;
+        font-weight: bold;
+    }
 }

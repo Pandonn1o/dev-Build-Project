@@ -40,3 +40,4 @@ const  InstallGenplan = ()=>{
     booking(build);
 }
 document.querySelector('.genplan') ? InstallGenplan() : null;
+document.querySelector('.floor-plan') ? InstallFloor() : null;
