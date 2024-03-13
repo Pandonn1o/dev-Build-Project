@@ -16,18 +16,24 @@
     text-align: center;
 }
 
-.floor-path {
-    fill-opacity: 0;
-    stroke-opacity: 0;
-    fill: #0085b7;
-    stroke: darkgreen;
-    transition: .4s;
-    stroke-width: 2px;
-
+.flat {
     &:hover {
+        .flat-path{
         cursor: pointer;
         fill-opacity: 0.3;
         stroke-opacity: 0.6;
+        }
+    }
+    &-path{
+        fill-opacity: 0;
+        stroke-opacity: 0;
+        fill: #0085b7;
+        stroke: darkgreen;
+        transition: .4s;
+        stroke-width: 2px;
+    }
+    .status{
+        cursor: pointer;
     }
 }
 
@@ -69,6 +75,7 @@
     stroke: black;
     stroke-width: 2px;
     &__number, &__text{
+        cursor: pointer;
         fill:  black;
         font-weight: bold;
     }
