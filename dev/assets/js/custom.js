@@ -65,6 +65,7 @@ const InstallFloors = ()=>{
             salesFlats.innerHTML = flatSales;
             bookedFlats.innerHTML = flatBooked;
             soldFlats.innerHTML = flatSold;
+            console.log(flatNumber)
         })
     })
 }
