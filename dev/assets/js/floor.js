@@ -1,5 +1,5 @@
 const flatArray = [{
-    id:0,
+    id: 0,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -9,7 +9,7 @@ const flatArray = [{
     flatNumber: '1',
     status: 'burglary' 
 },{
-    id:1,
+    id: 1,
     house: '1',
     floor: '2',
     roomsAmount: '2',
@@ -19,7 +19,7 @@ const flatArray = [{
     flatNumber: '2',
     status: 'sold' 
 },{
-    id:2,
+    id: 2,
     house: '1',
     floor: '2',
     roomsAmount: '2',
@@ -29,7 +29,7 @@ const flatArray = [{
     flatNumber: '3',
     status: 'burglary' 
 },{
-    id:3,
+    id: 3,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -39,7 +39,7 @@ const flatArray = [{
     flatNumber: '4',
     status: 'sold' 
 },{
-    id:4,
+    id: 4,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -49,7 +49,7 @@ const flatArray = [{
     flatNumber: '5',
     status: 'free' 
 },{
-    id:5,
+    id: 5,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -59,7 +59,7 @@ const flatArray = [{
     flatNumber: '6',
     status: 'free' 
 },{
-    id:6,
+    id: 6,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -69,7 +69,7 @@ const flatArray = [{
     flatNumber: '7',
     status: 'free' 
 },{
-    id:7,
+    id: 7,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -79,7 +79,7 @@ const flatArray = [{
     flatNumber: '8',
     status: 'booked' 
 },{
-    id:8,
+    id: 8,
     house: '1',
     floor: '2',
     roomsAmount: '3',
@@ -101,14 +101,14 @@ window.addEventListener('load', ()=>{
         }
 
         const initialValue = [{
-            id:8,
+            id: 9,
             house: '1',
             floor: '2',
             roomsAmount: '3',
-            square: '79m²',
-            priceForSquare: '2145$',
-            price: '169 455$',
-            flatNumber: '9',
+            square: '53m²',
+            priceForSquare: '755$',
+            price: '40 050$',
+            flatNumber: '10',
             status: 'booked' 
         }]
 
@@ -169,9 +169,8 @@ window.addEventListener('load', ()=>{
             flatFloor.addEventListener('click', () => {
                 removeActiveClass();
                 flatFloor.classList.add('active');
-                let thisFlat = flatFloor.getAttribute('data-number');
+                let thisFlat = flatFloor.getAttribute('data-number')
                 let flatNumber = flatArray.filter(item=> item.flatNumber === Number(thisFlat));
-                console.log(initialValue, flatNumber);
                 renderInfo(flatNumber);
             })
         })
