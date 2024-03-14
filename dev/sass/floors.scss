@@ -17,6 +17,14 @@
 }
 
 .flat {
+    &.active{
+        .flat-path{
+            fill: #0085b7;
+            stroke: darkgreen;
+            fill-opacity: 0.3;
+            stroke-opacity: 0.6;
+        }
+    }
     &:hover {
         .flat-path{
         cursor: pointer;
