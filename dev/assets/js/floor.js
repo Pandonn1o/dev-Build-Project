@@ -6,9 +6,9 @@ const flatArray = [{
     square: '82m²',
     priceForSquare: '643$',
     price: '52 918$',
-    flatNumber: '1',
-    status: 'burglary' 
-},{
+    flatNumber: 1,
+    status: 'burgain',
+}, {
     id: 1,
     house: '1',
     floor: '2',
@@ -16,9 +16,9 @@ const flatArray = [{
     square: '60m²',
     priceForSquare: '1233$',
     price: '73 980$',
-    flatNumber: '2',
-    status: 'sold' 
-},{
+    flatNumber: 2,
+    status: 'sold',
+}, {
     id: 2,
     house: '1',
     floor: '2',
@@ -26,9 +26,9 @@ const flatArray = [{
     square: '61m²',
     priceForSquare: '1233$',
     price: '75 000$',
-    flatNumber: '3',
-    status: 'burglary' 
-},{
+    flatNumber: 3,
+    status: 'burgain',
+}, {
     id: 3,
     house: '1',
     floor: '2',
@@ -36,9 +36,9 @@ const flatArray = [{
     square: '82m²',
     priceForSquare: '453$',
     price: '37 140$',
-    flatNumber: '4',
-    status: 'sold' 
-},{
+    flatNumber: 4,
+    status: 'sold',
+}, {
     id: 4,
     house: '1',
     floor: '2',
@@ -46,9 +46,9 @@ const flatArray = [{
     square: '80m²',
     priceForSquare: '976$',
     price: '78 080$',
-    flatNumber: '5',
-    status: 'free' 
-},{
+    flatNumber: 5,
+    status: 'free',
+}, {
     id: 5,
     house: '1',
     floor: '2',
@@ -56,9 +56,9 @@ const flatArray = [{
     square: '39m²',
     priceForSquare: '345$',
     price: '13 455$',
-    flatNumber: '6',
-    status: 'free' 
-},{
+    flatNumber: 6,
+    status: 'free',
+}, {
     id: 6,
     house: '1',
     floor: '2',
@@ -66,9 +66,9 @@ const flatArray = [{
     square: '42m²',
     priceForSquare: '623$',
     price: '26 166$',
-    flatNumber: '7',
-    status: 'free' 
-},{
+    flatNumber: 7,
+    status: 'free',
+}, {
     id: 7,
     house: '1',
     floor: '2',
@@ -76,9 +76,9 @@ const flatArray = [{
     square: '39m²',
     priceForSquare: '764$',
     price: '29 796$',
-    flatNumber: '8',
-    status: 'booked' 
-},{
+    flatNumber: 8,
+    status: 'booked',
+}, {
     id: 8,
     house: '1',
     floor: '2',
@@ -86,16 +86,16 @@ const flatArray = [{
     square: '79m²',
     priceForSquare: '2145$',
     price: '169 455$',
-    flatNumber: '9',
-    status: 'booked' 
-}]
+    flatNumber: 9,
+    status: 'booked',
+}, ]
 
-window.addEventListener('load', ()=>{
-    const installFloor = () =>{
+window.addEventListener('load', () => {
+    const installFloor = () => {
         const flatsFloors = document.querySelectorAll('.flat');
         const flatInfo = document.querySelector('.floor-info');
-        const removeActiveClass = () =>{
-            flatsFloors.forEach(active =>{
+        const removeActiveClass = () => {
+            flatsFloors.forEach(active => {
                 active.classList.remove('active');
             })
         }
@@ -109,12 +109,12 @@ window.addEventListener('load', ()=>{
             priceForSquare: '755$',
             price: '40 050$',
             flatNumber: '10',
-            status: 'booked' 
+            status: 'booked',
         }]
 
-        const renderInfo = (array)=>{
-            const flatInformation = array.map(item =>{
-                return(
+        const renderInfo = (array) => {
+            const flatInformation = array.map(item => {
+                return (
                     `
                     <div class="info-item">
                         <div class="info-item__title">Номер будинку:</div>
@@ -154,26 +154,24 @@ window.addEventListener('load', ()=>{
         }
         renderInfo(initialValue);
         flatsFloors.forEach(flatFloor => {
-            if(flatFloor.classList.contains('booked')){
+            if (flatFloor.classList.contains('booked')) {
                 flatFloor.querySelector('.status-cell__text-span').innerHTML = "Бронь";
-            }
-            else if(flatFloor.classList.contains('burgain')){
+            } else if (flatFloor.classList.contains('burgain')) {
                 flatFloor.querySelector('.status-cell__text-span').innerHTML = "Акция";
-            }
-            else if(flatFloor.classList.contains('sold')){
+            } else if (flatFloor.classList.contains('sold')) {
                 flatFloor.querySelector('.status-cell__text-span').innerHTML = "Продано";
-            }
-            else if(flatFloor.classList.contains('free')){
+            } else if (flatFloor.classList.contains('free')) {
                 flatFloor.querySelector('.status-cell__text-span').innerHTML = "Свободно";
             }
             flatFloor.addEventListener('click', () => {
                 removeActiveClass();
                 flatFloor.classList.add('active');
                 let thisFlat = flatFloor.getAttribute('data-number')
-                let flatNumber = flatArray.filter(item=> item.flatNumber === Number(thisFlat));
+                let flatNumber = flatArray.filter(item => item.flatNumber === Number(thisFlat));
+                console.table(initialValue, flatNumber)
                 renderInfo(flatNumber);
             })
         })
-    }  
+    }
     document.querySelector('.floor-plan') ? installFloor() : null;
 })
